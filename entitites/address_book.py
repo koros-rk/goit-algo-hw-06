@@ -13,7 +13,7 @@ class AddressBook(UserDict[str, Record]):
 
     def delete(self, name):
         if name in self.data:
-            del self.data[name]
+            del self.data[name.casefold()]
 
     def __str__(self):
         return "\n".join(str(record) for record in self.data.values())
