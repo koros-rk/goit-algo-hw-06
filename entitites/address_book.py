@@ -11,8 +11,8 @@ class AddressBook(UserDict[str, Record]):
         key = record.name.value.casefold()
         self.data.update({key: record})
 
-    def delete(self, name):
-        if name in self.data:
+    def delete(self, name: str):
+        if name.casefold() in self.data:
             del self.data[name.casefold()]
 
     def __str__(self):

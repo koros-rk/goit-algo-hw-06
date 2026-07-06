@@ -28,6 +28,8 @@ def main():
 
     book.delete("Jane")
 
+    print("\n")
+
 
 if __name__ == "__main__":
     main()

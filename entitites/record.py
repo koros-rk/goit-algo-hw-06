@@ -14,20 +14,16 @@ class Record:
     def add_phone(self, phone):
         created = Phone(phone)
         self.phones.append(created)
-        return created
 
     def edit_phone(self, old_phone: str, new_phone):
-        deleted = self.remove_phone(old_phone)
-        if deleted:
-            return self.add_phone(new_phone)
-        return None
+        self.remove_phone(old_phone)
+        self.add_phone(new_phone)
 
     def remove_phone(self, phone):
         phone = self.find_phone(phone)
         if phone:
-            self.phones.remove(phone)
-            return phone
-        return None
+            return self.phones.remove(phone)
+        raise ValueError("Phone not found")
 
     def __str__(self):
         return f"{self.name}: {', '.join(str(phone) for phone in self.phones)}"
