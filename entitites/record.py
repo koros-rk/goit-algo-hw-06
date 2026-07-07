@@ -16,8 +16,8 @@ class Record:
         self.phones.append(created)
 
     def edit_phone(self, old_phone: str, new_phone):
-        self.remove_phone(old_phone)
         self.add_phone(new_phone)
+        self.remove_phone(old_phone)
 
     def remove_phone(self, phone):
         phone = self.find_phone(phone)
